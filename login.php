@@ -29,6 +29,7 @@
 						</div>
 						<input type="submit" name="connection" class="btn btn-primary" value="Connexion"/>
 					</form>
+					
 				</div>
 			</div>
 		</div>
