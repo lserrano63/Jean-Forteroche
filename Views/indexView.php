@@ -15,7 +15,7 @@
         
     <body>
         <div>
-            <?php require('Views/header.php'); ?>
+            <?php require ('header.php'); ?>
 
             <section class="container-fluid" id="section_img">
                 <figure>
@@ -24,17 +24,23 @@
                     de Jean Forteroche</figcaption>
                 </figure>
             </section>
-
+            <?php 
+            $req = getPosts();
+            while ($data = $req->fetch())
+            {
+            ?>
             <article>
+                <h2><?php echo $data['title']?></h2>
+                <p>posté le <?php echo $data['post_date']?></p>
+                <p><?php echo nl2br($data['post'])?></p>
+                <a href="Controllers/post.php?id=<?php echo $data['id']; ?>">Voir plus</a>
             </article>
-
-            <article>
-            </article>
-
-            <article>
-            </article>
-
-            <?php require('Views/footer.php'); ?>
+            <?php
+            }
+            $req->closeCursor();
+            ?>
+            
+            <?php require ('footer.php'); ?>
 
         </div>
     </body>

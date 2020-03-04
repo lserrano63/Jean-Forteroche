@@ -6,7 +6,7 @@
             <li><a href=""><i class="fab fa-instagram fa-2x" class="img-circle"></i></a></li>
         </ul>
         <a class="col-3 text-center" href="">Mentions légales</a>
-        <a class="col-3 text-center" href="login.php">Connection (admin)</a>
+        <a class="col-3 text-center" href="Views/login.php">Connection (admin)</a>
         <p class="col-4 footer-copyright text-center">Copyright © All rights reserved. Billet simple pour l'Alaska 2020</p>
     </div>
 </footer>
