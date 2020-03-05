@@ -11,12 +11,12 @@
 
         <article class="news">
             <h3>
-                <?= htmlspecialchars($post['title']) ?>
-                <em>le <?= $post['creation_date_fr'] ?></em>
+                <?= htmlspecialchars($post['title']); ?>
+                <em>le <?= $post['creation_date_fr']; ?></em>
             </h3>
             
             <p>
-                <?php echo nl2br(htmlspecialchars($post['post'])) ?>
+                <?php echo nl2br(htmlspecialchars($post['post'])); ?>
             </p>
         </article>
 

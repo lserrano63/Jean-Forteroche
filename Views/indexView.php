@@ -25,15 +25,16 @@
                 </figure>
             </section>
             <?php 
-            $req = getPosts();
+            $postManager = new PostManager();
+            $req = $postManager->getPosts();
             while ($data = $req->fetch())
             {
             ?>
             <article>
-                <h2><?php echo $data['title']?></h2>
-                <p>posté le <?php echo $data['post_date']?></p>
-                <p><?php echo nl2br($data['post'])?></p>
-                <a href="Controllers/post.php?id=<?php echo $data['id']; ?>">Voir plus</a>
+                <h2><?= $data['title'];?></h2>
+                <p>posté le <?php echo $data['creation_date_fr'];?></p>
+                <p><?= nl2br($data['post']);?></p>
+                <a href="index.php?action=ViewPost&id=<?= $data['id']; ?>">Voir plus</a>
             </article>
             <?php
             }
