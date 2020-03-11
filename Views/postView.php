@@ -20,26 +20,26 @@
             ?>
                 <div class="comment">
                     <p><strong><?= htmlspecialchars($comment['author']); ?></strong> le <?php echo $comment['comment_date_fr']; ?></p>
-                    <p><?= nl2br(htmlspecialchars($comment['comment'])); ?></p>
-                    <i class="fas fa-ban"></i>
+                    <p><?= nl2br(htmlspecialchars($comment['comment'])); ?></p>                   
+                    <i class="fas fa-ban"><input type="button" value="Signaler"></i>
                 </div>
             <?php
             }
-        ?>
+            ?>
     </section>
     <section class="container">
         <div class="card card-container">
             <h3 class="card-header">Ajouter votre commentaire</h2>
             <div class="card-body">
                 <div class="login-form">
-                    <form action="" method="post">
+                    <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
                         <div class="form-group">
                             <label for="pseudo">Nom :</label>
-                            <input name="name" type="text" id="name" class="form-control" required/>
+                            <input name="author" type="text" id="author" class="form-control" required/>
                         </div>
                         <div class="form-group">
                             <label for="message">Message :</label>
-                            <textarea type="message" name="message" id="message" class="form-control" required></textarea>
+                            <textarea type="message" name="comment" id="comment" class="form-control" required></textarea>
                         </div>
                         <input type="submit" name="send_message" class="btn btn-primary" value="Envoyer"/>
                     </form>

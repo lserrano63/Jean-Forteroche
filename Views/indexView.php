@@ -35,6 +35,7 @@
     }
         $req->closeCursor();
         ?>
+    <a href="Controllers/report.php">Test</a>
 </div>
 
 <footer class="container navbar">
