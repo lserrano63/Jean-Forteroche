@@ -1,13 +1,15 @@
 <?php
 require ('Models/postManager.php');
 require ('Models/commentManager.php');
-
+session_start();
 if (isset($_GET['action']))
 {
-    if($_GET['action']== 'ViewPost')
+    $action = $_GET['action'];
+    if($action== 'ViewPost')
     {
         require('Controllers/post.php');
-    } elseif ($_GET['action'] == 'addComment') 
+        viewPost();
+    } elseif ($action == 'AddComment') 
     {
         if (isset($_GET['id']) && $_GET['id'] > 0) 
         {
@@ -20,6 +22,14 @@ if (isset($_GET['action']))
         else {
             echo 'Erreur : aucun identifiant de billet envoyé';
         } 
+    } elseif ($action == 'Disconnect') {
+        $_SESSION = array();
+        session_destroy();
+    } elseif ($action == 'Reported') {
+        if (isset($_GET['id']) && $_GET['id'] > 0){
+            require('Controllers/post.php');
+            report($_GET['id']);
+        }
     }
 } else {
     require('Views/indexView.php');

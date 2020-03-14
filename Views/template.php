@@ -14,6 +14,22 @@
     </head>
         
     <body>
+        <header class="container">
+            <nav>
+                <ul class="nav">
+                    <li class="nav-item"><a class="nav-link" href="../index.php">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">A propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="">Me contacter</a></li>
+                    <?php 
+                        if (isset($_SESSION['connected']) && $_SESSION['connected'] == true) {
+                        ?>
+                            <li class="nav-item"><a class="nav-link" href="?action=Disconnect">Déconnexion</a></li>
+                        <?php    
+                        }
+                        ?>
+                </ul>
+            </nav>
+        </header>
         <?= $content ?>
     </body>
 </html>

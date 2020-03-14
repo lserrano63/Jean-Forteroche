@@ -12,6 +12,7 @@
             <div>
                 <p><strong><?= htmlspecialchars($reportedComments['author']); ?></strong> le <?php echo $reportedComments['comment_date_fr']; ?></p>
                 <p><?= nl2br(htmlspecialchars($reportedComments['comment'])); ?></p>
+                <a href="?action=Accepter&id=<?=$reportedComments['id']; ?>">Accepter commentaire reporté</a>
             </div>
         <?php
         }

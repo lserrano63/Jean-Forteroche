@@ -24,4 +24,12 @@ class CommentManager extends Manager {
         $reportedComments = $db->query('SELECT id, author, comment, DATE_FORMAT(comment_date, \'%d/%m/%Y à %Hh%imin\') AS comment_date_fr, reported FROM comments WHERE reported = 1 ORDER BY comment_date DESC');
         return $reportedComments;
     }
+
+    public function report($comment_id)
+    {
+        $db = $this->dbConnection();
+        $commentReport = $db->prepare('UPDATE comments SET reported=1 WHERE id=?');
+        $report = $commentReport->execute(array($comment_id));
+        return $report;
+    }
 }

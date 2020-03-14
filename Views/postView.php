@@ -32,14 +32,14 @@
             <h3 class="card-header">Ajouter votre commentaire</h2>
             <div class="card-body">
                 <div class="login-form">
-                    <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
+                    <form action="index.php?action=AddComment&id=<?= $post['id'] ?>" method="post">
                         <div class="form-group">
                             <label for="pseudo">Nom :</label>
                             <input name="author" type="text" id="author" class="form-control" required/>
                         </div>
                         <div class="form-group">
                             <label for="message">Message :</label>
-                            <textarea type="message" name="comment" id="comment" class="form-control" required></textarea>
+                            <textarea type="text" name="comment" id="comment" class="form-control" required></textarea>
                         </div>
                         <input type="submit" name="send_message" class="btn btn-primary" value="Envoyer"/>
                     </form>
