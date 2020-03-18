@@ -23,7 +23,8 @@
                     <?php 
                         if (isset($_SESSION['connected']) && $_SESSION['connected'] == true) {
                         ?>
-                            <li class="nav-item"><a class="nav-link" href="?action=Disconnect">Déconnexion</a></li>
+                            <li class="nav-item"><a class="nav-link" href="?action=admin">Administration</a></li>
+                            <li class="nav-item"><a class="nav-link" href="?action=disconnect">Déconnexion</a></li>
                         <?php    
                         }
                         ?>

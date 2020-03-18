@@ -10,9 +10,10 @@
         while ($reportedComments = $reportedComment->fetch()) {
         ?>
             <div>
-                <p><strong><?= htmlspecialchars($reportedComments['author']); ?></strong> le <?php echo $reportedComments['comment_date_fr']; ?></p>
+                <p><strong><?= htmlspecialchars($reportedComments['author']); ?></strong> le <?= $reportedComments['comment_date_fr']; ?></p>
                 <p><?= nl2br(htmlspecialchars($reportedComments['comment'])); ?></p>
-                <a href="?action=Accepter&id=<?=$reportedComments['id']; ?>">Accepter commentaire reporté</a>
+                <a href="?action=accept&id=<?=$reportedComments['id']; ?>">Accepter commentaire</a>
+                <a href="?action=remove&id=<?=$reportedComments['id']; ?>">Supprimer commentaire</a>
             </div>
         <?php
         }

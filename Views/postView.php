@@ -21,7 +21,7 @@
                 <div class="comment">
                     <p><strong><?= htmlspecialchars($comment['author']); ?></strong> le <?php echo $comment['comment_date_fr']; ?></p>
                     <p><?= nl2br(htmlspecialchars($comment['comment'])); ?></p>                   
-                    <i class="fas fa-ban"><input type="button" value="Signaler"></i>
+                    <a href="index.php?action=reported&id=<?= $comment['id']?>"><i class="fas fa-ban">Signaler</i></a>
                 </div>
             <?php
             }
@@ -32,7 +32,7 @@
             <h3 class="card-header">Ajouter votre commentaire</h2>
             <div class="card-body">
                 <div class="login-form">
-                    <form action="index.php?action=AddComment&id=<?= $post['id'] ?>" method="post">
+                    <form action="index.php?action=addComment&id=<?= $post['id'] ?>" method="post">
                         <div class="form-group">
                             <label for="pseudo">Nom :</label>
                             <input name="author" type="text" id="author" class="form-control" required/>

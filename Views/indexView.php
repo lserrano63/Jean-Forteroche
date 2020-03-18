@@ -19,13 +19,12 @@
         <article>
             <h2><?= $data['title'];?></h2>
             <p>posté le <?php echo $data['creation_date_fr'];?></p>
-            <p><?= substr(nl2br($data['post']),0,300);?> <a href="index.php?action=ViewPost&id=<?= $data['id']; ?>">Voir plus</a></p>    
+            <p><?= substr(nl2br($data['post']),0,300);?> <a href="index.php?action=viewPost&id=<?= $data['id']; ?>">Voir plus</a></p>    
         </article>
         <?php
     }
         $req->closeCursor();
         ?>
-    <a href="Controllers/report.php">Test</a>
 </div>
 
 <footer class="container navbar">

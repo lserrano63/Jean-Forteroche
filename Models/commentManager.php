@@ -25,6 +25,22 @@ class CommentManager extends Manager {
         return $reportedComments;
     }
 
+    public function acceptComment($comment_id)
+    {
+        $db = $this->dbConnection();
+        $acceptaComment = $db->prepare('UPDATE comments SET reported=0 WHERE id=?');
+        $accept = $acceptaComment->execute(array($comment_id));
+        return $accept;
+    }
+
+    public function removeComment($comment_id)
+    {
+        $db = $this->dbConnection();
+        $removeaComment = $db->prepare('DELETE FROM comments WHERE reported=1 AND id=?');
+        $remove = $removeaComment->execute(array($comment_id));
+        return $remove;
+    }
+
     public function report($comment_id)
     {
         $db = $this->dbConnection();

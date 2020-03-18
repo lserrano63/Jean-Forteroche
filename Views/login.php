@@ -3,6 +3,7 @@ if (isset($_POST["name"]) && strtolower($_POST["name"]) == "jean" ){
 if (isset($_POST["password"]) &&  password_verify($_POST["password"], '$2y$10$sIGNT2Wp9ml93ribg8qRTONt/vPJx7thWWExq8gj1zUhsyVZpXYVi')){	
 	session_start();		
 	$_SESSION['connected'] = true;
+	header('Location: ../index.php');
 } else {
 	echo 'pass non valide';
 	}
