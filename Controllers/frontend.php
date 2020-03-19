@@ -16,7 +16,7 @@ function viewPost(){
 function addOneComment($postId, $author, $comment)
 {
     $commentManager = new CommentManager();
-    $addaComment = $commentManager->addComment($postId, $author, $comment);
+    $addaComment = $commentManager->addComment($postId, htmlspecialchars($author), htmlspecialchars($comment));
     if ($addaComment === false) {
         die('Impossible d\'ajouter le commentaire !');
     }

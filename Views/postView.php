@@ -21,7 +21,7 @@
                 <div class="comment">
                     <p><strong><?= htmlspecialchars($comment['author']); ?></strong> le <?php echo $comment['comment_date_fr']; ?></p>
                     <p><?= nl2br(htmlspecialchars($comment['comment'])); ?></p>                   
-                    <a href="index.php?action=reported&id=<?= $comment['id']?>"><i class="fas fa-ban">Signaler</i></a>
+                    <a href="index.php?action=reported&id=<?= $comment['id']?>&post_id=<?= $post['id']?>"><i class="fas fa-ban">Signaler</i></a>
                 </div>
             <?php
             }
@@ -40,6 +40,10 @@
                         <div class="form-group">
                             <label for="message">Message :</label>
                             <textarea type="text" name="comment" id="comment" class="form-control" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="check">Voulez-vous accepter la politique de confidentialité : </label>
+                            <input type="checkbox" name="check" id="check" class="form-control" required>
                         </div>
                         <input type="submit" name="send_message" class="btn btn-primary" value="Envoyer"/>
                     </form>

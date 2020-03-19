@@ -28,7 +28,7 @@ if (isset($_GET['action']))
         if (isset($_GET['id']) && $_GET['id'] > 0){
             require('Controllers/frontend.php');
             report($_GET['id']);
-            header('Location: index.php?action=viewPost&id='. $_GET['id']);
+            header('Location: index.php?action=viewPost&id='. $_GET['post_id']);
         }
     }  elseif (isset($_SESSION['connected']) && ($_SESSION['connected'] == true)){
         if ($action == 'disconnect') {
@@ -59,7 +59,9 @@ if (isset($_GET['action']))
                 removeComment($_GET['id']);
                 header('Location: index.php?action=viewReportedPosts');
             }
-        }
+        } else {
+            echo 'Vous n\'avez pas la permission!';
+        } 
         //elseif ($action == 'help') {
             //require('Views/help.php');
         //}
