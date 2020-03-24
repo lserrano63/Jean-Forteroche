@@ -25,4 +25,20 @@ class PostManager extends Manager{
         $addaPost = $reqPost->execute(array($title, $post));
         return $addaPost;
     }
+
+    public function modifyPost($title, $post)
+    {
+        $db = $this->dbConnection();
+        $modifyaPost = $db->prepare('INSERT INTO posts(title, post, post_date) VALUES(?, ?, NOW())');
+        $modifyPost = $modifyaPost->execute(array($title, $post));
+        return $modifyPost;
+    }
+
+    public function removePost($comment_id)
+    {
+        $db = $this->dbConnection();
+        $removeaPost = $db->prepare('DELETE FROM posts WHERE id=?');
+        $removePost = $removeaPost->execute(array($comment_id));
+        return $removePost;
+    }
 }

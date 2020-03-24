@@ -41,7 +41,7 @@
                             <label for="message">Message :</label>
                             <textarea type="text" name="comment" id="comment" class="form-control" required></textarea>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group text-center">
                             <label for="check">Voulez-vous accepter la politique de confidentialité : </label>
                             <input type="checkbox" name="check" id="check" class="form-control" required>
                         </div>

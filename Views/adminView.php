@@ -4,8 +4,8 @@
 <section>
     <ul>
         <li><a href="index.php?action=postCreation">Nouveau post</a></li>
+        <li><a href="index.php?action=adminPost">Administration des posts</a></li>
         <li><a href="index.php?action=viewReportedPosts">Commentaires Signalés</a></li>
-        <li><a href="index.php?action=help">Aide</a></li>
     </ul>
 </section>
 

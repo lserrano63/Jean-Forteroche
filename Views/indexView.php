@@ -3,9 +3,9 @@
 <?php ob_start(); ?>
 <div>
     <section class="container-fluid" id="section_img">
-        <figure>
-            <img class="img-fluid" src="images/1.jpg" alt="Alaska's lake"/>
-            <figcaption>Billet simple pour l'Alaska<br>
+        <figure class="position-relative">
+            <img class="figure-img img-fluid" src="images/1.jpg" alt="Alaska's lake"/>
+            <figcaption class="position-absolute">Billet simple pour l'Alaska<br>
             de Jean Forteroche
             </figcaption>
         </figure>

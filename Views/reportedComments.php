@@ -12,8 +12,8 @@
             <div>
                 <p><strong><?= htmlspecialchars($reportedComments['author']); ?></strong> le <?= $reportedComments['comment_date_fr']; ?></p>
                 <p><?= nl2br(htmlspecialchars($reportedComments['comment'])); ?></p>
-                <a href="?action=accept&id=<?=$reportedComments['id']; ?>">Accepter commentaire</a>
-                <a href="?action=remove&id=<?=$reportedComments['id']; ?>">Supprimer commentaire</a>
+                <a href="?action=accept&id=<?=$reportedComments['id']; ?>" title="Accepter commentaire"><i class="fas fa-check"></i></a>
+                <a href="?action=remove&id=<?=$reportedComments['id']; ?>" title="Supprimer commentaire"><i class="far fa-trash-alt"></i></a>
             </div>
         <?php
         }

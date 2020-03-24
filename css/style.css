@@ -13,25 +13,21 @@ nav {
     padding-left:0 !important;
     padding-right:0 !important;
 }
-.img-fluid {
-    height:700px !important;
-}
+
 #section_img {
     max-height:1000px;
 }
 figure {
     width:100%;
     text-align: center;
-    position: relative;
 }
 figure img {
-    height: 700px;
+    max-height: 700px;
     width:100%;
 }
 figcaption {
     color:white;
     font-size: 1.8em;
-    position: absolute;
     top:45%;
     left:40%;
 }
@@ -61,4 +57,12 @@ figcaption {
 }
 .comment input {
     border:none;
+}
+#check:focus{
+    outline: none;
+}
+
+/* Creation post */
+div.tox.tox-tinymce {
+    height: 400px !important;
 }
