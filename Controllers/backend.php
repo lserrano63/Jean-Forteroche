@@ -12,6 +12,18 @@ function addOnePost($title, $post)
     }
 }
 
+function modifyOnePost($title, $post, $postId)
+{
+    $postManager = new PostManager();
+    $postManager->modifyPost($title, $post, $postId);
+}
+
+function deleteOnePost($post_id)
+{
+    $postManager = new PostManager();
+    $postManager->removePost($post_id);
+}
+
 function acceptComment($comment_id)
 {
     $commentManager = new CommentManager();
@@ -22,4 +34,14 @@ function removeComment($comment_id)
 {
     $commentManager = new CommentManager();
     $commentManager->removeComment($comment_id);
+}
+
+function viewPostAdmin(){
+    $postManager = new PostManager();
+    if (isset($_GET['id']) && $_GET['id'] > 0) {
+        $postAdmin = $postManager->getPost($_GET['id']);
+    }
+    else {
+        echo 'Erreur : aucun identifiant de billet envoyé';
+    }
 }

@@ -4,12 +4,12 @@
 <section>
     <article class="news">
         <h3>
-            <?= htmlspecialchars($post['title']); ?>
+            <?= $post['title']; ?>
             <em>le <?= $post['creation_date_fr']; ?></em>
         </h3>
                 
         <p>
-            <?= nl2br(htmlspecialchars($post['post'])); ?>
+            <?= nl2br($post['post']); ?>
         </p>
     </article>
 
@@ -18,10 +18,10 @@
             <?php
             while ($comment = $comments->fetch()){
             ?>
-                <div class="comment">
-                    <p><strong><?= htmlspecialchars($comment['author']); ?></strong> le <?php echo $comment['comment_date_fr']; ?></p>
+                <div id="comment" class="comment position-relative">
+                    <p><strong><?= htmlspecialchars($comment['author']); ?></strong> le <?= $comment['comment_date_fr']; ?></p>
                     <p><?= nl2br(htmlspecialchars($comment['comment'])); ?></p>                   
-                    <a href="index.php?action=reported&id=<?= $comment['id']?>&post_id=<?= $post['id']?>"><i class="fas fa-ban">Signaler</i></a>
+                    <a id="report_button" href="index.php?action=reported&id=<?= $comment['id']?>&post_id=<?= $post['id']?>" title="Signaler"><i class="fas fa-ban btn btn-primary"></i></a>
                 </div>
             <?php
             }

@@ -56,18 +56,19 @@ $action = $_GET['action'];
             }
         }
         elseif ($action == 'adminPost') {
-            if (isset($_GET['id']) && $_GET['id'] > 0) && ($action == 'adminPost&modify') {
-                require('Controllers/backend.php');
-                //modifyPost($_POST['title'], $_POST['post']);
-                header('Location: index.php?action=adminPost');
-            }
-            elseif (isset($_GET['id']) && $_GET['id'] > 0) && ($action == 'adminPost&destroy'){
-                require('Controllers/backend.php');
-                //removePost($_GET['id']);
-                header('Location: index.php?action=adminPost');
-            }
-            else {
-                require('Views/adminPostView.php');
-            }
+            require('Views/adminPostView.php');
+        } elseif ((isset($_GET['id']) && $_GET['id'] > 0) && ($action == 'adminPostModify')) {
+            require('Controllers/frontend.php');
+            require('Controllers/backend.php');
+            require('Views/adminModify.php');
+            viewPostAdmin();
+        } elseif ((isset($_GET['id']) && $_GET['id'] > 0) && ($action == 'adminPostModified')){
+            require('Controllers/backend.php');
+            modifyOnePost($_POST['title'], $_POST['post'], $_GET['id']);
+        } elseif ((isset($_GET['id']) && $_GET['id'] > 0) && ($action == 'adminPostDelete')){
+            require('Controllers/backend.php');
+            deleteOnePost($_GET['id']);
+            header('Location: index.php?action=adminPost');
         }
+             
 } 

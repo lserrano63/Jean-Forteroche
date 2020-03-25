@@ -43,9 +43,6 @@ figcaption {
 }
 
 /* Comments button report */
-.comment {
-    position: relative;
-}
 .comment .fa-ban {
     position: absolute;
     top:0;
@@ -55,7 +52,7 @@ figcaption {
 .comment:hover .fa-ban{
     display:inline;
 }
-.comment input {
+#comment input {
     border:none;
 }
 #check:focus{
