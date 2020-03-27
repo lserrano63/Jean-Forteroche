@@ -29,7 +29,7 @@ class PostManager extends Manager{
     public function modifyPost($title, $post, $postId)
     {
         $db = $this->dbConnection();
-        $modifyaPost = $db->prepare('UPDATE posts SET title = :title , post = :post, id = :id');
+        $modifyaPost = $db->prepare('UPDATE posts SET title = :title , post = :post WHERE id= :id');
         $modifyPost = $modifyaPost->execute(array(
             'title' => $title,
             'post' => $post,

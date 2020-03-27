@@ -16,6 +16,7 @@ function modifyOnePost($title, $post, $postId)
 {
     $postManager = new PostManager();
     $postManager->modifyPost($title, $post, $postId);
+    header('Location: index.php?action=adminPost');
 }
 
 function deleteOnePost($post_id)
@@ -40,6 +41,7 @@ function viewPostAdmin(){
     $postManager = new PostManager();
     if (isset($_GET['id']) && $_GET['id'] > 0) {
         $postAdmin = $postManager->getPost($_GET['id']);
+        require('Views/adminModify.php');
     }
     else {
         echo 'Erreur : aucun identifiant de billet envoyé';

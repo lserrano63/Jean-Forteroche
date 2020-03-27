@@ -60,7 +60,6 @@ $action = $_GET['action'];
         } elseif ((isset($_GET['id']) && $_GET['id'] > 0) && ($action == 'adminPostModify')) {
             require('Controllers/frontend.php');
             require('Controllers/backend.php');
-            require('Views/adminModify.php');
             viewPostAdmin();
         } elseif ((isset($_GET['id']) && $_GET['id'] > 0) && ($action == 'adminPostModified')){
             require('Controllers/backend.php');

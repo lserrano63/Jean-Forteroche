@@ -5,7 +5,7 @@ session_start();
 
 if (isset($_GET['action']))
 {
-    require('Views/routeur.php');
+    require('Views/router.php');
 } else {
     require('Views/indexView.php');
 }

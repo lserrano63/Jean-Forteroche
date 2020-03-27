@@ -7,14 +7,14 @@
                 <h3 class="card-header">Modifier votre post</h2>
                 <div class="card-body">
                     <div class="login-form">
-                        <form action="index.php?action=adminPostModified" method="post">
+                        <form action="index.php?action=adminPostModified&id=<?= $postAdmin['id'];?>" method="post">
                             <div class="form-group">
                                 <label for="title">Titre :</label>
                                 <input name="title" type="text" id="title" class="form-control" value="<?= $postAdmin['title'];?>" required/>
                             </div>
                             <div class="form-group">
                                 <label for="post">Post :</label>
-                                <textarea type="text" name="post" id="post" class="form-control"><?= $post['post'];?></textarea>
+                                <textarea required type="text" name="post" id="post" class="form-control"><?= $postAdmin['post'];?></textarea>
                             </div>
                             <input type="submit" name="send_post" class="btn btn-primary" value="Envoyer"/>
                         </form>

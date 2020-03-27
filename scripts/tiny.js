@@ -1,4 +1,9 @@
 tinymce.init({
-    selector: '#post'
+    selector: '#post',
+    setup:function(editor){
+        editor.on('change', function(){
+            tinymce.triggerSave();
+        })
+    }
 });
 

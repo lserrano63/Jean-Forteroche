@@ -13,7 +13,7 @@
                     </div>
                     <div class="form-group">
                         <label for="post">Post :</label>
-                        <textarea type="text" name="post" id="post" class="form-control"></textarea>
+                        <textarea required type="text" name="post" id="post" class="form-control"></textarea>
                     </div>
                     <input type="submit" name="send_post" class="btn btn-primary" value="Envoyer"/>
                 </form>
