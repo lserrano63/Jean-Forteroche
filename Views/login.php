@@ -5,7 +5,7 @@ if (isset($_POST["password"]) &&  password_verify($_POST["password"], '$2y$10$sI
 	$_SESSION['connected'] = true;
 	header('Location: ../index.php');
 } else {
-	echo 'pass non valide';
+	echo 'mot de passe non valide';
 	}
 }	
 ?>

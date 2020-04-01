@@ -1,7 +1,7 @@
 <?php $title = $post['title']; ?>
 <?php ob_start(); ?>
-<p><a href="../index.php">Retour à la liste des chapitres</a></p>
-<section>
+<section class="container text-center bg-light">
+    <p><a href="../index.php">Retour à la liste des chapitres</a></p>
     <article class="news">
         <h3>
             <?= $post['title']; ?>
@@ -27,7 +27,7 @@
             }
             ?>
     </section>
-    <section class="container">
+    <section class="container mb-2">
         <div class="card card-container">
             <h3 class="card-header">Ajouter votre commentaire</h2>
             <div class="card-body">

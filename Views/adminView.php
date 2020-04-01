@@ -1,11 +1,11 @@
 <?php $title = "Administration" ?>
 <?php ob_start(); ?>
 
-<section>
-    <ul>
-        <li><a href="index.php?action=postCreation">Nouveau post</a></li>
-        <li><a href="index.php?action=adminPost">Administration des posts</a></li>
-        <li><a href="index.php?action=viewReportedPosts">Commentaires Signalés</a></li>
+<section class="container mt-3">
+    <ul class="container list-unstyled d-flex justify-content-center flex-column">
+        <li class="btn btn-secondary mt-3"><a class="text-light" href="?action=postCreation">Nouveau post</a></li>
+        <li class="btn btn-secondary mt-3"><a class="text-light" href="?action=adminPost">Administration des posts</a></li>
+        <li class="btn btn-secondary mt-3"><a class="text-light" href="?action=viewReportedComments">Commentaires Signalés</a></li>
     </ul>
 </section>
 

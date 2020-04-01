@@ -1,13 +1,12 @@
 body {
     margin:0;
+    background-color: #A2F8FF;
 }
 
 /* Header */
-nav {
-    display:flex;
-    justify-content:center;
+header {
+    background-color: #79B6BB;
 }
-
 /* First Section */
 .container-fluid {
     padding-left:0 !important;
@@ -19,14 +18,12 @@ nav {
 }
 figure {
     width:100%;
-    text-align: center;
 }
 figure img {
     max-height: 700px;
     width:100%;
 }
 figcaption {
-    color:white;
     font-size: 1.8em;
     top:45%;
     left:40%;
@@ -34,7 +31,7 @@ figcaption {
 
 /* Footer */
 #social_networks {
-    justify-content: space-around;
+    margin: 0;
 }
 
 /* Login */
@@ -62,4 +59,8 @@ figcaption {
 /* Creation post */
 div.tox.tox-tinymce {
     height: 400px !important;
+}
+
+.test {
+    background-color: #f8f9fa !important;
 }

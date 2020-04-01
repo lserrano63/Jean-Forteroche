@@ -1,42 +1,42 @@
 <?php $title = "Billet simple pour l'Alaska"; ?>
 
 <?php ob_start(); ?>
-<div>
-    <section class="container-fluid" id="section_img">
+    <section class="container-fluid " id="section_img">
         <figure class="position-relative">
             <img class="figure-img img-fluid" src="images/1.jpg" alt="Alaska's lake"/>
-            <figcaption class="position-absolute">Billet simple pour l'Alaska<br>
+            <figcaption class="position-absolute text-light mx-auto">Billet simple pour l'Alaska<br>
             de Jean Forteroche
             </figcaption>
         </figure>
     </section>
-<?php 
-    $postManager = new PostManager();
-    $req = $postManager->getPosts();
-    while ($data = $req->fetch()) 
-    {
-        ?>
-        <article>
-            <h2><?= $data['title'];?></h2>
-            <p>posté le <?php echo $data['creation_date_fr'];?></p>
-            <p><?= substr(nl2br($data['post']),0,300);?> <a href="index.php?action=viewPost&id=<?= $data['id']; ?>">Voir plus</a></p>    
-        </article>
-        <?php
-    }
-        $req->closeCursor();
-        ?>
-</div>
-
+    <section class="container rounded bg-secondary pt-3 pb-1">
+    <?php 
+        $postManager = new PostManager();
+        $req = $postManager->getPosts();
+        while ($data = $req->fetch()) 
+        {
+            ?>
+            <article class="container text-center bg-light">
+                <h2><?= $data['title'];?></h2>
+                <p>posté le <?php echo $data['creation_date_fr'];?></p>
+                <p class="test"><?= substr(nl2br($data['post']),0,300);?> ...<br>
+                <a class="btn btn-primary mb-1" href="?action=viewPost&id=<?= $data['id']; ?>">Voir plus</a></p>    
+            </article>
+            <?php
+        }
+            $req->closeCursor();
+            ?>
+    </section>
 <footer class="container navbar">
-    <div class="row">
-        <ul id="social_networks" class="d-flex col-2 list-unstyled">
-            <li><a href=""><i class="fab fa-twitter fa-2x" class="img-circle"></i></a></li>
-            <li><a href=""><i class="fab fa-facebook fa-2x" class="img-circle"></i></a></li>
-            <li><a href=""><i class="fab fa-instagram fa-2x" class="img-circle"></i></a></li>
+    <div class="container row d-flex text-center justify-content-center m-auto">
+        <ul id="social_networks" class="d-flex col-12 col-sm-6 justify-content-around list-unstyled p-0">
+            <li><a href=""><i class="fab fa-twitter fa-2x"></i></a></li>
+            <li><a href=""><i class="fab fa-facebook fa-2x"></i></a></li>
+            <li><a href=""><i class="fab fa-instagram fa-2x"></i></a></li>
         </ul>
-        <a class="col-3 text-center" href="">Mentions légales</a>
-        <a class="col-3 text-center" href="Views/login.php">Connection (admin)</a>
-        <p class="col-4 footer-copyright text-center">Copyright © All rights reserved. Billet simple pour l'Alaska 2020</p>
+        <a class="col-6 col-sm-3 p-0" href="">Mentions légales</a>
+        <a class="col-6 col-sm-3 p-0" href="Views/login.php">Connection</a>
+        <p class="col-12 mb-0 font-italic p-0">Copyright © All rights reserved. Billet simple pour l'Alaska 2020</p>
     </div>
 </footer>
 <?php $content = ob_get_clean(); ?>

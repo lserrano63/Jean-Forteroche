@@ -15,9 +15,9 @@
     </head>
         
     <body>
-        <header class="container">
+        <header class="d-flex justify-content-center">
             <nav>
-                <ul class="nav">
+                <ul class="container nav col-12 p-0">
                     <li class="nav-item"><a class="nav-link" href="../index.php">Accueil</a></li>
                     <li class="nav-item"><a class="nav-link" href="">A propos</a></li>
                     <?php 
