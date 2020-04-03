@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" type="image/png" href="pics/logo.png"> <! -- a faire -->
+        <link rel="shortcut icon" type="image/png" href="pics/logo.png"> <!-- a faire -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <script src="https://kit.fontawesome.com/f42ba57ba1.js" crossorigin="anonymous"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
@@ -18,7 +18,7 @@
         <header class="d-flex justify-content-center">
             <nav>
                 <ul class="container nav col-12 p-0">
-                    <li class="nav-item"><a class="nav-link" href="../index.php">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.php">Accueil</a></li>
                     <li class="nav-item"><a class="nav-link" href="">A propos</a></li>
                     <?php 
                         if (isset($_SESSION['connected']) && $_SESSION['connected'] == true) {

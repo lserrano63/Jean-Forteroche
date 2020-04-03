@@ -41,6 +41,14 @@ class CommentManager extends Manager {
         return $remove;
     }
 
+    public function removeAllCommentsFromPost($post_id)
+    {
+        $db = $this->dbConnection();
+        $removeaComment = $db->prepare('DELETE FROM comments WHERE post_id=?');
+        $remove = $removeaComment->execute(array($post_id));
+        return $remove;
+    }
+
     public function report($comment_id)
     {
         $db = $this->dbConnection();

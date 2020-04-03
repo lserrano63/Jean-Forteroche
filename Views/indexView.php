@@ -16,10 +16,10 @@
         while ($data = $req->fetch()) 
         {
             ?>
-            <article class="container text-center bg-light">
-                <h2><?= $data['title'];?></h2>
-                <p>posté le <?php echo $data['creation_date_fr'];?></p>
-                <p class="test"><?= substr(nl2br($data['post']),0,300);?> ...<br>
+            <article class="container bg-light">
+                <h2 class="text-center"><?= $data['title'];?></h2>
+                <p class="text-center">posté le <?= $data['creation_date_fr'];?></p>
+                <p><?= substr(nl2br($data['post']),0,300);?> ...<br>
                 <a class="btn btn-primary mb-1" href="?action=viewPost&id=<?= $data['id']; ?>">Voir plus</a></p>    
             </article>
             <?php
@@ -35,7 +35,7 @@
             <li><a href=""><i class="fab fa-instagram fa-2x"></i></a></li>
         </ul>
         <a class="col-6 col-sm-3 p-0" href="">Mentions légales</a>
-        <a class="col-6 col-sm-3 p-0" href="Views/login.php">Connection</a>
+        <a class="col-6 col-sm-3 p-0" href="?action=login">Connection</a>
         <p class="col-12 mb-0 font-italic p-0">Copyright © All rights reserved. Billet simple pour l'Alaska 2020</p>
     </div>
 </footer>

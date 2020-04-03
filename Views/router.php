@@ -23,9 +23,16 @@ $action = $_GET['action'];
         if (isset($_GET['id']) && $_GET['id'] > 0){
             require('Controllers/frontend.php');
             report($_GET['id']);
-            header('Location: index.php?action=viewPost&id='. $_GET['id']);
+            header('Location: index.php?action=viewPost&id='. $_GET['post_id']);
         }
-    }  elseif (isset($_SESSION['connected']) && ($_SESSION['connected'] == true)){
+    }  elseif ($action=="login"){
+        if (isset($_POST['name'])) {
+            require('Controllers/frontend.php');
+            login();
+        } else {
+            require('Views/login.php');
+        }
+    } elseif (isset($_SESSION['connected']) && ($_SESSION['connected'] == true)){
         if ($action == 'disconnect') {
             $_SESSION = array();
             session_destroy();

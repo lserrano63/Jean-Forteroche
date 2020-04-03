@@ -30,3 +30,15 @@ function report($comment_id)
     $commentManager = new CommentManager();
     $commentManager->report($comment_id);
 }
+
+function login()
+{
+    if (isset($_POST["name"]) && strtolower($_POST["name"]) == "jean" ){
+        if (isset($_POST["password"]) &&  password_verify($_POST["password"], '$2y$10$sIGNT2Wp9ml93ribg8qRTONt/vPJx7thWWExq8gj1zUhsyVZpXYVi')){			
+            $_SESSION['connected'] = true;
+            header('Location: index.php');
+        } else {
+            echo 'Mot de passe non valide';
+            }
+        }
+}

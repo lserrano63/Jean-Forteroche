@@ -1,9 +1,9 @@
 <?php $title = $post['title']; ?>
 <?php ob_start(); ?>
-<section class="container text-center bg-light">
-    <p><a href="../index.php">Retour à la liste des chapitres</a></p>
+<section class="container bg-light">
+    <p><a href="index.php">Retour à la liste des chapitres</a></p>
     <article class="news">
-        <h3>
+        <h3 class="text-center">
             <?= $post['title']; ?>
             <em>le <?= $post['creation_date_fr']; ?></em>
         </h3>
@@ -14,7 +14,7 @@
     </article>
 
     <section id="comments">
-        <h3>Commentaires</h3>
+        <h3 class="text-center">Commentaires</h3>
             <?php
             while ($comment = $comments->fetch()){
             ?>

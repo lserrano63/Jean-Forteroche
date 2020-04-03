@@ -23,6 +23,8 @@ function deleteOnePost($post_id)
 {
     $postManager = new PostManager();
     $postManager->removePost($post_id);
+    $commentManager = new CommentManager();
+    $commentManager->removeAllCommentsFromPost($post_id);
 }
 
 function acceptComment($comment_id)
