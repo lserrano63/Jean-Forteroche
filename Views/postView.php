@@ -1,8 +1,8 @@
 <?php $title = $post['title']; ?>
 <?php ob_start(); ?>
-<section class="container bg-light">
-    <p><a href="index.php">Retour à la liste des chapitres</a></p>
-    <article class="news">
+<section class="container bg-secondary mt-2 mb-1 p-2">
+    <p><a href="index.php" class="text-light">Retour à la liste des chapitres</a></p>
+    <article class="news bg-light mt-2 mb-2 p-2">
         <h3 class="text-center">
             <?= $post['title']; ?>
             <em>le <?= $post['creation_date_fr']; ?></em>
@@ -13,7 +13,7 @@
         </p>
     </article>
 
-    <section id="comments">
+    <section id="comments" class="bg-light mt-2 mb-2 p-3">
         <h3 class="text-center">Commentaires</h3>
             <?php
             while ($comment = $comments->fetch()){
@@ -27,7 +27,7 @@
             }
             ?>
     </section>
-    <section class="container mb-2">
+    <section class="container mb-2 ">
         <div class="card card-container">
             <h3 class="card-header">Ajouter votre commentaire</h2>
             <div class="card-body">
@@ -42,7 +42,7 @@
                             <textarea type="text" name="comment" id="comment" class="form-control" required></textarea>
                         </div>
                         <div class="form-group text-center">
-                            <label for="check">Voulez-vous accepter la politique de confidentialité : </label>
+                            <label for="check">Voulez-vous accepter la <a href="?action=mentions">politique de confidentialité</a> : </label>
                             <input type="checkbox" name="check" id="check" class="form-control" required>
                         </div>
                         <input type="submit" name="send_message" class="btn btn-primary" value="Envoyer"/>

@@ -1,10 +1,10 @@
 <?php $title = "Billet simple pour l'Alaska"; ?>
 
 <?php ob_start(); ?>
-    <section class="container-fluid " id="section_img">
+    <section class="container-fluid p-0 m-0" id="section_img">
         <figure class="position-relative">
             <img class="figure-img img-fluid" src="images/1.jpg" alt="Alaska's lake"/>
-            <figcaption class="position-absolute text-light mx-auto">Billet simple pour l'Alaska<br>
+            <figcaption class="position-absolute text-light text-center">Billet simple pour l'Alaska<br>
             de Jean Forteroche
             </figcaption>
         </figure>
@@ -34,7 +34,7 @@
             <li><a href=""><i class="fab fa-facebook fa-2x"></i></a></li>
             <li><a href=""><i class="fab fa-instagram fa-2x"></i></a></li>
         </ul>
-        <a class="col-6 col-sm-3 p-0" href="">Mentions légales</a>
+        <a class="col-6 col-sm-3 p-0" href="?action=mentions">Mentions légales</a>
         <a class="col-6 col-sm-3 p-0" href="?action=login">Connection</a>
         <p class="col-12 mb-0 font-italic p-0">Copyright © All rights reserved. Billet simple pour l'Alaska 2020</p>
     </div>

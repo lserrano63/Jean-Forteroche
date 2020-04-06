@@ -1,20 +1,21 @@
 <?php $title = "Administration des posts" ?>
 <?php ob_start(); ?>
 
-<section class="container rounded bg-secondary mt-3 pt-3 pb-3">
+<section class="container rounded bg-secondary mt-3 pt-1 pb-3">
 <?php 
     $postManager = new PostManager();
     $req = $postManager->getPosts();
     while ($data = $req->fetch()) 
     {
         ?>
-        <article class="container text-center bg-light mt-3 pb-2">
-            <h2><?= $data['title'];?></h2>
-            <p>posté le <?php echo $data['creation_date_fr'];?></p>
-            <p><?= substr(nl2br($data['post']),0,400);?></p>   
-            <a href="?action=adminPostModify&id=<?= $data['id']; ?>" title="Modifier le post" class="btn btn-primary"><i class="far fa-edit"></i></a>
-            <a href="?action=adminPostDelete&id=<?= $data['id']; ?>" title="Supprimer le post" class="btn btn-primary" data-toggle="modal" data-target="#modal"><i class="far fa-trash-alt"></i></a>
-            
+        <article class="container bg-light mt-3 pb-2">
+            <h2 class="text-center"><?= $data['title'];?></h2>
+            <p class="text-center">posté le <?php echo $data['creation_date_fr'];?></p>
+            <p><?= substr(nl2br($data['post']),0,400);?></p>
+            <div class="text-center">
+                <a href="?action=adminPostModify&id=<?= $data['id']; ?>" title="Modifier le post" class="btn btn-primary"><i class="far fa-edit"></i></a>
+                <a href="?action=adminPostDelete&id=<?= $data['id']; ?>" title="Supprimer le post" class="btn btn-primary" data-toggle="modal" data-target="#modal"><i class="far fa-trash-alt"></i></a>
+            </div>
             <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
