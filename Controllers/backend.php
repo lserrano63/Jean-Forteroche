@@ -16,7 +16,6 @@ function modifyOnePost($title, $post, $postId)
 {
     $postManager = new PostManager();
     $postManager->modifyPost($title, $post, $postId);
-    header('Location: index.php?action=adminPost');
 }
 
 function deleteOnePost($post_id)
@@ -48,4 +47,10 @@ function viewPostAdmin(){
     else {
         echo 'Erreur : aucun identifiant de billet envoyé';
     }
+}
+
+function modifyTheBiography($bio, $contact)
+{
+    $bioManager = new BioManager();
+    $bioManager->modifyBiography($bio, $contact);
 }
