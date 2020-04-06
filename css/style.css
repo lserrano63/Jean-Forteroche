@@ -8,11 +8,6 @@ header {
     background-color: #79B6BB;
 }
 /* First Section */
-.container-fluid {
-    padding-left:0 !important;
-    padding-right:0 !important;
-}
-
 #section_img {
     max-height:1000px;
 }
@@ -28,17 +23,11 @@ figcaption {
     top:40%;
     left:calc(50% - 175px);
     width:350px;
-    text-align: center;
 }
 
 /* Footer */
 #social_networks {
     margin: 0;
-}
-
-/* Login */
-.card {
-    margin-top:10%;
 }
 
 /* Comments button report */
@@ -61,4 +50,16 @@ figcaption {
 /* Creation post */
 div.tox.tox-tinymce {
     height: 400px !important;
+}
+
+/* Media queries Mobile*/
+@media screen and (max-width: 426px)
+{
+    /* Figcaption's adjusting */
+    figcaption {
+        font-size: 1.4em;
+        top:30%;
+        left:calc(50% - 140px);
+        width:280px;
+    }
 }
