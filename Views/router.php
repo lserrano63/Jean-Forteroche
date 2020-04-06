@@ -25,7 +25,11 @@ $action = $_GET['action'];
             report($_GET['id']);
             header('Location: index.php?action=viewPost&id='. $_GET['post_id']);
         }
-    }  elseif ($action=="login"){
+    } elseif ($action=="mentions"){
+        require('Views/mentions.php');
+    } elseif ($action=="propos"){
+        require('Views/propos.php');
+    } elseif ($action=="login"){
         if (isset($_POST['name'])) {
             require('Controllers/frontend.php');
             login();
@@ -47,6 +51,12 @@ $action = $_GET['action'];
                 require('Controllers/backend.php');
                 addOnePost($_POST['title'], $_POST['post']);
             }
+        } elseif ($action == 'adminBio') {
+            require('Views/adminBio.php');
+        } elseif ($action == 'adminBioModified') {
+            require('Controllers/backend.php');
+            modifyTheBiography($_POST['bio'], $_POST['contact']);
+            header('Location: index.php?action=propos');
         } elseif ($action == 'viewReportedComments') {
             require('Views/reportedComments.php');
         } elseif ($action == 'accept') {
@@ -71,10 +81,10 @@ $action = $_GET['action'];
         } elseif ((isset($_GET['id']) && $_GET['id'] > 0) && ($action == 'adminPostModified')){
             require('Controllers/backend.php');
             modifyOnePost($_POST['title'], $_POST['post'], $_GET['id']);
+            header('Location: index.php?action=adminPost');
         } elseif ((isset($_GET['id']) && $_GET['id'] > 0) && ($action == 'adminPostDelete')){
             require('Controllers/backend.php');
             deleteOnePost($_GET['id']);
             header('Location: index.php?action=adminPost');
-        }
-             
-} 
+        }            
+}
