@@ -39,6 +39,6 @@ function login()
             header('Location: index.php');
         } else {
             echo 'Mot de passe non valide';
-            }
         }
+    }
 }
