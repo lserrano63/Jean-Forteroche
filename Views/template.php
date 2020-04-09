@@ -19,17 +19,22 @@
             <nav class="d-flex justify-content-center text-center">
                 <ul class="container nav row">
                     <div class="col-12 d-flex flex-wrap">
-                        <li class="nav-item col-sm-3 col-6"><a class="nav-link" href="index.php">Accueil</a></li>
-                        <li class="nav-item col-sm-3 col-6"><a class="nav-link" href="?action=propos">A propos</a></li>
                         <?php 
                             if (isset($_SESSION['connected']) && $_SESSION['connected'] == true) {
                             ?>
+                            <li class="nav-item col-sm-3 col-6"><a class="nav-link" href="index.php">Accueil</a></li>
+                            <li class="nav-item col-sm-3 col-6"><a class="nav-link" href="?action=propos">A propos</a></li>
                             <li class="nav-item col-sm-3 col-6"><a class="nav-link" href="?action=admin">Administration</a></li>
                             <li class="nav-item col-sm-3 col-6"><a class="nav-link" href="?action=disconnect">Déconnexion</a></li>
-                    </div>
-                        <?php    
-                        }
+                            <?php    
+                            } else {
+                            ?>
+                                <li class="nav-item col-sm-6 col-6"><a class="nav-link" href="index.php">Accueil</a></li>
+                                <li class="nav-item col-sm-6 col-6"><a class="nav-link" href="?action=propos">A propos</a></li>
+                        <?php        
+                            }
                         ?>
+                    </div>   
                 </ul>
             </nav>
         </header>
