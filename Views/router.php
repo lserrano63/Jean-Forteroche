@@ -86,5 +86,6 @@ $action = $_GET['action'];
             require('Controllers/backend.php');
             deleteOnePost($_GET['id']);
             header('Location: index.php?action=adminPost');
-        }            
+        }
+    }            
 }
